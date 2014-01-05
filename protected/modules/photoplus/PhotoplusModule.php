@@ -60,7 +60,7 @@ class PhotoplusModule extends YWebModule
         return true;
     }
     public function getParamsLabels()
-    { // опис параметрів модуля!!!
+    { // опис параметрів модуля!!!!!!
         return array(
             'adminMenuOrder' => Yii::t('PageModule.photo', 'Порядок следования в меню'),
             'editor'         => Yii::t('PageModule.photo', 'Визуальный редактор'),
