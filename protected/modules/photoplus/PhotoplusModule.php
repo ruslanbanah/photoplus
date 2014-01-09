@@ -2,6 +2,15 @@
 
 class PhotoplusModule extends YWebModule
 {
+    public $uploadPath = "PhotoPlus";
+
+    public $vkontakte_app_id;
+    public $vkontakte_secret;
+    public $facebook_app_id ;
+    public $facebook_secret ;
+    public $instagram_app_id;
+    public $instagram_secret;
+
     public function getDependencies()
     {
         return array(
@@ -66,6 +75,14 @@ class PhotoplusModule extends YWebModule
             'editor'         => Yii::t('PageModule.photo', 'Визуальный редактор'),
             'mainCategory'   => Yii::t('PageModule.photo', 'Главная категория страниц'),
             'uploadPath'     => Yii::t('PageModule.photo', 'Каталог для загрузки фото (относительно {path})', array('{path}' => Yii::getPathOfAlias('webroot') . DIRECTORY_SEPARATOR . Yii::app()->getModule("yupe")->uploadPath)),
+            'vkontakte_app_id'     => Yii::t('PageModule.photo', 'ID - приложения вконтакте'),
+            'vkontakte_secret'     => Yii::t('PageModule.photo', 'Секретный ключ приложения Вконтакте'),
+
+            'facebook_app_id'     => Yii::t('PageModule.photo', 'ID - приложения facebook'),
+            'facebook_secret'     => Yii::t('PageModule.photo', 'Секретный ключ приложения facebook'),
+
+            'instagram_app_id'     => Yii::t('PageModule.photo', 'ID - приложения instagram'),
+            'instagram_secret'     => Yii::t('PageModule.photo', 'Секретный ключ приложения instagram'),
         );
     }
 
@@ -75,6 +92,12 @@ class PhotoplusModule extends YWebModule
             'adminMenuOrder',
             'editor'        => Yii::app()->getModule('yupe')->editors,
             'uploadPath',
+            'vkontakte_app_id',
+            'vkontakte_secret',
+            'facebook_app_id',
+            'facebook_secret',
+            'instagram_app_id',
+            'instagram_secret'
         );
     }
 
@@ -102,6 +125,8 @@ class PhotoplusModule extends YWebModule
         ));
 
     }
+
+
 
     public function getNavigation()
     {

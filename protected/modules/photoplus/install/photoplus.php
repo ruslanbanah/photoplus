@@ -7,6 +7,7 @@ return array(
     ),
     'import'    => array(
         'application.modules.photoplus.models.*',
+        'application.modules.photoplus.components.*',
     ),
     'component' => array(),
     'rules'     => array(

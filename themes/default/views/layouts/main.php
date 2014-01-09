@@ -26,6 +26,7 @@
     <![endif]-->
 
     <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/web/css/main.css"/>
+    <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/web/css/bootstrap.min.css"/>
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
