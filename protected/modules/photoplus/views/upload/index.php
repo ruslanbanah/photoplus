@@ -5,6 +5,64 @@ $this->breadcrumbs=array(
 	'Upload',
 );
 ?>
+<script>
+
+//    var postData = {
+//        "category_id":"2",
+//        "creation_date":"2014-01-21 17:34:10",
+//        "change_date":"2014-01-21 17:34:13",
+//        "user_id":"2",
+//        "name":"newobj",
+//        "title":"this is new object",
+//        "description":"it is description for new object",
+//        "status":"2"
+//    };
+//
+//    $.ajax({
+//        url:'/api/photoplus/photo',
+//        data:JSON.stringify(postData),
+//        type:"POST",
+//        success:function(data) {
+//            console.log(data);
+//            $.ajax({
+//                url:'/api/photoplus/photo',
+//                type:"GET",
+//                success:function(data) {
+//                    console.log(data);
+//                },
+//                error:function (xhr, ajaxOptions, thrownError){
+//                    console.log(xhr.responseText);
+//                }
+//            });
+//        },
+//        error:function (xhr, ajaxOptions, thrownError){
+//            console.log(xhr.responseText);
+//        }
+//    });
+
+
+    $.ajax({
+        url:'/api/photoplus/photo/2',
+        type:"DELETE",
+        success:function(data) {
+            console.log(data);
+            $.ajax({
+                url:'/api/photoplus/photo',
+                type:"GET",
+                success:function(data) {
+                    console.log(data);
+                },
+                error:function (xhr, ajaxOptions, thrownError){
+                    console.log(xhr.responseText);
+                }
+            });
+        },
+        error:function (xhr, ajaxOptions, thrownError){
+            console.log(xhr.responseText);
+        }
+    });
+</script>
+
 
 <div class="page-header">
     <h1>

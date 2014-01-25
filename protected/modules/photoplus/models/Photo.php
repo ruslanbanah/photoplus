@@ -14,7 +14,7 @@
  * @property string $description
  * @property integer $status
  */
-class PhotoplusPhoto extends CActiveRecord
+class Photo extends YModel
 {
 	/**
 	 * Returns the static model of the specified AR class.

@@ -2,6 +2,7 @@
 
 class UploadController extends YFrontController
 {
+
     public function filters()
     {
         return array(

@@ -83,6 +83,7 @@ return array(
     ),
     'aliases' => array(
         'bootstrap' => realpath(__DIR__ . '/../modules/yupe/extensions/booster'),
+        'RestfullYii' =>realpath(__DIR__ . '/../extensions/starship/RestfullYii'),
     ),
     'import'            => CMap::mergeArray(
         array(
@@ -166,7 +167,10 @@ return array(
                             // правило переадресации инсталятора
                             '/'                                                           => 'install/default/index',
                         ),
-                        $config['rules']
+                        CMap::mergeArray(
+                            require(dirname(__FILE__).'/../extensions/starship/restfullyii/config/routes.php'),
+                            $config['rules']
+                        )
                     ),
                     array(
                         // общие правила
@@ -183,7 +187,7 @@ return array(
             // базовый класс CHttpRequest переопределен для загрузки файлов через ajax, подробнее: http://www.yiiframework.com/forum/index.php/topic/8689-disable-csrf-verification-per-controller-action/
             'request' => array(
                 'class'                  => 'YHttpRequest',
-                'enableCsrfValidation'   => true,
+                'enableCsrfValidation'   => false,
                 'csrfTokenName'          => 'YUPE_TOKEN',
                 'noCsrfValidationRoutes' => array('yupe/backend/AjaxFileUpload'),
                 'enableCookieValidation' => true, // подробнее: http://www.yiiframework.com/doc/guide/1.1/ru/topics.security#sec-4
